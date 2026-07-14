@@ -127,10 +127,15 @@ Media pembelajaran ini dikembangkan sebagai bagian dari penelitian skripsi denga
 ## 👩‍💻 Identitas Peneliti
 
 **Nama : Riswanda Rurye Aprilianyani**
+
 **NIM : 220631100131**
-**Program Studi : Pendidikan Informatika**  
-**Fakultas : Fakultas Keguruan dan Ilmu Pendidikan**  
+
+**Program Studi : Pendidikan Informatika**
+
+**Fakultas : Fakultas Keguruan dan Ilmu Pendidikan**
+
 **Universitas : Universitas Trunodjoyo Madura (UTM)**
+
 **Email : riswandaruri6@gmail.com**
 ---
 
