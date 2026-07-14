@@ -8,10 +8,11 @@
 
 ## 📖 Tentang BELPADA
 
-BELPADA (Belajar Pemrograman Dasar) merupakan media pembelajaran berbasis web yang dikembangkan untuk membantu peserta didik mempelajari konsep pemrograman dasar. 
+BELPADA (Belajar Pemrograman Dasar) merupakan media pembelajaran berbasis web yang dikembangkan untuk membantu peserta didik mempelajari konsep pemrograman dasar.
 
-Media pembelajaran ini dikembangkan sebagai produk penelitian pengembangan (Research and Development) dengan model **ADDIE (Analysis, Design, Development, Implementation, Evaluation)**.
+Media pembelajaran ini dikembangkan sebagai produk penelitian pengembangan (*Research and Development*) dengan model **ADDIE (Analysis, Design, Development, Implementation, Evaluation)**.
 
+🌐 **Website BELPADA:** https://pemrogramandasar.my.id
 ---
 
 ## 🎯 Tujuan
@@ -31,7 +32,6 @@ BELPADA menyediakan materi dasar pemrograman web yang meliputi:
 
 ### HTML
 - Pengenalan HTML
-- Struktur Dasar HTML
 - teks
 - Link
 - Image
@@ -72,35 +72,28 @@ BELPADA menyediakan materi dasar pemrograman web yang meliputi:
 - CSS3
 - JavaScript
 - PHP
-
-
 ---
 
 ## 📂 Struktur Proyek
 
 ```
-BELPADA/
+belpada/
 │
-├── assets/
+├── Assets/
 │   ├── css/
 │   ├── img/
 │   ├── js/
 │   └── video/
 │
-├── includes/
-│
-├── materi/
-│
-├── quiz/
-│
-├── laboratory/
-│
-├── tutorial/
-│
-├── index.php
+├── evaluasi.php          # Halaman evaluasi/kuis
+├── index.php             # Halaman utama aplikasi
+├── laboratorium.php      # Laboratorium pemrograman (code editor)
+├── latihan.php           # Halaman latihan interaktif
+├── materi.php            # Materi HTML, CSS, dan JavaScript
+├── menu.php              # Navigasi/menu aplikasi
+├── petunjuk.php          # Petunjuk penggunaan & informasi pengembang
 │
 └── README.md
-```
 
 ---
 
@@ -123,7 +116,6 @@ http://localhost/BELPADA
 ```
 
 ---
-
 ## 🎓 Penelitian
 
 Media pembelajaran ini dikembangkan sebagai bagian dari penelitian skripsi dengan judul:
@@ -139,9 +131,7 @@ Media pembelajaran ini dikembangkan sebagai bagian dari penelitian skripsi denga
 **Program Studi : Pendidikan Informatika**  
 **Fakultas : Fakultas Keguruan dan Ilmu Pendidikan**  
 **Universitas : Universitas Trunodjoyo Madura (UTM)**
-
-
-
+**Email : riswandaruri6@gmail.com**
 ---
 
 ## 🏫 Sasaran Pengguna
@@ -158,10 +148,7 @@ Halaman utama BELPADA menampilkan:
 
 - Informasi media pembelajaran
 - Petunjuk penggunaan
-- Materi HTML, CSS, dan JavaScript
-- Akses menuju laboratorium pemrograman
-- Video pembelajaran
-- Kuis interaktif
+- Tombol Mulai
 
 ---
 
