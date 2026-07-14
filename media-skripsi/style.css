@@ -1,0 +1,346 @@
+/* Tema Merah SMK — pelengkap Tailwind */
+
+:root {
+    --color-bg: #f9fafb;
+    --color-primary: #991b1b;
+    --color-primary-hover: #b91c1c;
+    --color-text: #1f2937;
+    --color-text-muted: #6b7280;
+    --color-border: #e5e7eb;
+}
+
+a, button, input, select, textarea {
+    touch-action: manipulation;
+}
+
+.bg-brand-900,
+body.bg-brand-900 {
+    background-color: #f9fafb !important;
+}
+
+.hero-bg {
+    background: transparent;
+}
+
+.glass-card {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+    color: #1f2937 !important;
+    backdrop-filter: none !important;
+}
+
+.glass-card h2.text-white,
+.glass-card h3.text-white {
+    color: #991b1b !important;
+}
+
+.glass-card .text-slate-300,
+.glass-card .text-slate-400 {
+    color: #4b5563 !important;
+}
+
+.bg-brand-800,
+.glass-nav {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
+
+.view-section {
+    display: none;
+    opacity: 0;
+}
+
+.view-section.active {
+    display: block;
+    animation: fadeIn 0.25s forwards;
+}
+
+#home.active,
+#main-menu.active {
+    display: block;
+}
+
+#kuis-test.active {
+    display: block !important;
+    position: fixed !important;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background: #f9fafb;
+    overflow-y: auto;
+}
+
+body:has(#kuis-test.active) {
+    overflow: hidden !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#splash-screen {
+    background: #f9fafb !important;
+}
+
+#loading-bar {
+    background: #b91c1c !important;
+}
+
+.quiz-choice-box {
+    background: #ffffff;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.875rem 1rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    transition: border-color 0.2s, background 0.2s;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
+
+.quiz-choice-box:hover {
+    border-color: #f87171;
+    background: #fef2f2;
+}
+
+.correct-choice {
+    background: #ecfdf5 !important;
+    border-color: #059669 !important;
+    color: #065f46 !important;
+}
+
+.incorrect-choice {
+    background: #fef2f2 !important;
+    border-color: #dc2626 !important;
+    color: #991b1b !important;
+    animation: none;
+}
+
+#quiz-question-text {
+    text-shadow: none !important;
+}
+
+.dnd-question-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    padding: 1.25rem;
+    color: #1f2937;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.dnd-drop-container {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1rem;
+    min-height: 100px;
+}
+
+.dnd-drop-slot {
+    min-width: 60px;
+    height: 34px;
+    background: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.25rem;
+    position: relative;
+}
+
+.dnd-drop-slot.drag-over {
+    border-color: #b91c1c;
+    background: #fef2f2;
+}
+
+.dnd-progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+#dnd-progress-bar {
+    height: 100%;
+    background: #b91c1c;
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 0.5rem;
+}
+
+.hint-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #991b1b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
+
+.hint-btn:hover {
+    background: #fef2f2;
+    border-color: #fca5a5;
+}
+
+.hint-box {
+    display: none;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    color: #92400e;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    margin: 1rem 0;
+}
+
+.feedback-box {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    margin: 1rem 0;
+}
+
+.feedback-box.correct-feedback {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+    color: #065f46;
+}
+
+.feedback-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.draggable-tag,
+.draggable-code-box {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    color: #1f2937;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: grab;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
+
+.draggable-tag {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.code-editor-container {
+    background: #1e293b;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', monospace;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+#dnd-drop-area .text-white\/70,
+#dnd-drop-area span.font-mono {
+    color: #4b5563 !important;
+}
+
+#dnd-preview-container {
+    padding: 1.5rem;
+    width: 100%;
+    min-height: 120px;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    color: #1a1a1a;
+}
+
+.dnd-inventory {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    width: 100%;
+}
+
+section[id^="materi-content"] .mt-12,
+#materi-pemrograman-web .mt-12 {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem 3rem;
+}
+
+.nav-btn.active {
+    background: #b91c1c;
+    color: #fff;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f3f4f6; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+
+@media (max-width: 640px) {
+    .quiz-choice-box { width: 100%; }
+}
+.shiny-text {
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #8ec5ff 25%,
+        #ffffff 50%,
+        #8ec5ff 75%,
+        #ffffff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+    from {
+        background-position: -200% center;
+    }
+    to {
+        background-position: 200% center;
+    }
+}
