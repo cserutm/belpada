@@ -1,10 +1,6 @@
 # BELPADA - Belajar Pemrograman Dasar
 
 <p align="center">
-  <img src="assets/img/logo.png" alt="BELPADA Logo" width="180">
-</p>
-
-<p align="center">
   <b>Media Pembelajaran Berbasis Web untuk Materi HTML, CSS, dan JavaScript</b>
 </p>
 
@@ -12,7 +8,7 @@
 
 ## 📖 Tentang BELPADA
 
-BELPADA (Belajar Pemrograman Dasar) merupakan media pembelajaran berbasis web yang dikembangkan untuk membantu peserta didik mempelajari konsep dasar pemrograman web secara interaktif. Media ini dibuat menggunakan **GDevelop** dan dapat diakses melalui browser tanpa perlu melakukan instalasi aplikasi.
+BELPADA (Belajar Pemrograman Dasar) merupakan media pembelajaran berbasis web yang dikembangkan untuk membantu peserta didik mempelajari konsep pemrograman dasar. 
 
 Media pembelajaran ini dikembangkan sebagai produk penelitian pengembangan (Research and Development) dengan model **ADDIE (Analysis, Design, Development, Implementation, Evaluation)**.
 
@@ -23,9 +19,9 @@ Media pembelajaran ini dikembangkan sebagai produk penelitian pengembangan (Rese
 BELPADA dikembangkan untuk:
 
 - Membantu siswa memahami materi pemrograman dasar.
-- Menyediakan media belajar yang menarik dan interaktif.
+- Menyediakan media belajar yang fleksible.
 - Meningkatkan keterlibatan peserta didik dalam proses pembelajaran.
-- Menyediakan latihan dan evaluasi yang dapat diakses secara online.
+- Menyediakan Materi,Video Pembelajaran, latihan Menyusun Kode,Laboratorium Pemrograman, evaluasi Pembelajaran yang dapat diakses secara online.
 
 ---
 
@@ -36,7 +32,7 @@ BELPADA menyediakan materi dasar pemrograman web yang meliputi:
 ### HTML
 - Pengenalan HTML
 - Struktur Dasar HTML
-- Heading dan Paragraph
+- teks
 - Link
 - Image
 - List
@@ -45,47 +41,38 @@ BELPADA menyediakan materi dasar pemrograman web yang meliputi:
 
 ### CSS
 - Pengenalan CSS
-- Selector
-- Color
-- Font
+- Selector dan Properties
 - Box Model
 - Flexbox
-- Layout Dasar
 
 ### JavaScript
 - Pengenalan JavaScript
 - Variabel
 - Tipe Data
 - Operator
-- Percabangan
-- Perulangan
 - Function
-- Event Dasar
-
 ---
 
 ## ✨ Fitur
 
-- 📖 Materi pembelajaran interaktif
-- 🎥 Video tutorial pembelajaran
+- 📖 Materi pembelajaran 
+- 🎥 Video pembelajaran
 - 💻 Laboratorium pemrograman (Mini Code Editor)
 - 💾 Penyimpanan hasil kode
-- 🧩 Latihan Drag and Drop Coding
-- 📝 Kuis Pilihan Ganda
+- 🧩 Latihan Menyusun Kode
+- 📝 Evaluasi Pembelajaran
 - 📊 Hasil evaluasi belajar
-- 📱 Responsive Design
 - 🌐 Berbasis Web
 
 ---
 
 ## 🛠️ Teknologi
 
-- GDevelop
 - HTML5
 - CSS3
 - JavaScript
 - PHP
-- MySQL
+
 
 ---
 
