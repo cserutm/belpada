@@ -1,0 +1,331 @@
+/* =============================================
+   INDEX.CSS — Landing page styles only
+   ============================================= */
+
+/* Dark background for landing page */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-white);
+}
+
+/* Lock to one screen on desktop only on landing page */
+@media (min-width: 1025px) {
+  body {
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* Background radial glows */
+body::before {
+  content: '';
+  position: absolute;
+  top: -10%; right: -10%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(163,10,20,0.08) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+body::after {
+  content: '';
+  position: absolute;
+  bottom: -10%; left: -10%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(45,41,69,0.2) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- Bagian Header ---- */
+.header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: 2px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.help-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: var(--transition-smooth);
+}
+
+.help-link:hover {
+  background-color: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+.help-icon-wrapper {
+  width: 40px; height: 40px;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 22px;
+  color: var(--text-white);
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(163,10,20,0.3);
+  transition: var(--transition-smooth);
+}
+
+.help-link:hover .help-icon-wrapper {
+  background-color: var(--hover-red);
+  box-shadow: 0 4px 15px rgba(197,15,27,0.5);
+  transform: scale(1.05);
+}
+
+/* ---- Pembatas Header — lebar penuh ---- */
+.header-divider {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--border-purple);
+  opacity: 0.8;
+}
+
+/* ---- Hero Section — full width, no max-width ---- */
+.hero-container {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding: 20px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr; /* Mengubah porsi gambar menjadi lebih besar */
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1025px) {
+  .hero-container {
+    height: calc(100vh - 90px);
+  }
+}
+
+/* ---- Kiri: Konten ---- */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.main-title {
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.main-title span { display: block; }
+.title-white-1, .title-white-2 { color: var(--text-white); }
+.title-red { color: var(--primary-red); }
+
+.red-divider {
+  width: 100%;
+  max-width: 480px;
+  height: 3px;
+  background-color: var(--primary-red);
+  border: none;
+  margin-bottom: 12px;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: clamp(14px, 1.4vw, 15.5px);
+  color: var(--text-gray);
+  line-height: 1.55;
+  margin-bottom: 15px;
+  max-width: 520px;
+}
+
+/* ---- Daftar Informasi ---- */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover { transform: translateX(5px); }
+
+.icon-container {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--primary-red);
+  border-radius: 8px;
+  color: var(--primary-red);
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.info-item:hover .icon-container {
+  background-color: var(--primary-red);
+  color: var(--text-white);
+  box-shadow: 0 4px 15px rgba(163,10,20,0.4);
+}
+
+.info-text {
+  font-size: 14.5px;
+  color: var(--text-gray);
+  line-height: 1.45;
+  padding-top: 2px;
+}
+
+.info-text strong { color: var(--text-white); font-weight: 600; }
+
+/* ---- Tombol CTA (Mulai) ---- */
+.cta-button {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 12px 40px;
+  background-color: var(--primary-red);
+  color: var(--text-white);
+  font-size: 16.5px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(163,10,20,0.4);
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
+.cta-button:hover::before { left: 100%; }
+
+.cta-button:hover {
+  background-color: var(--hover-red);
+  box-shadow: 0 8px 25px rgba(197,15,27,0.6);
+  transform: translateY(-3px);
+}
+
+.cta-button:active { transform: translateY(-1px); }
+
+/* ---- Kanan: Ilustrasi ---- */
+.hero-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fadeInRight 1s ease forwards;
+}
+
+.illustration-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-illustration {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+  animation: floatIllustration 6s ease-in-out infinite;
+}
+
+@media (min-width: 1025px) {
+  .illustration-wrapper {
+    transform: scale(1.15) translateX(25px); /* scale dan geser ke kanan sedikit */
+    transform-origin: center right; 
+  }
+  .main-illustration { 
+    max-height: 85vh; 
+  }
+}
+
+/* ---- Responsif ---- */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 5%;
+    text-align: center;
+  }
+  .hero-content { align-items: center; }
+  .red-divider { margin-left: auto; margin-right: auto; }
+  .subtitle { margin-left: auto; margin-right: auto; }
+  .info-list { align-items: center; width: 100%; max-width: 500px; }
+  .info-item { text-align: left; width: 100%; }
+  .cta-button { align-self: center; }
+  .header { padding: 20px 5%; }
+}
+
+@media (max-width: 768px) {
+  .header { flex-direction: column; gap: 15px; text-align: center; }
+  .logo-container { justify-content: center; }
+  .logo-img { height: 45px; }
+  .logo-text { font-size: 22px; }
+  .help-link { font-size: 14px; padding: 6px 12px; }
+  .help-icon-wrapper { width: 32px; height: 32px; font-size: 18px; }
+  .hero-container { padding: 20px 4%; }
+  .main-title { font-size: 2.3rem; }
+  .cta-button { width: 100%; max-width: 320px; padding: 14px 0; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .main-title { font-size: 1.85rem; }
+  .info-item { gap: 12px; }
+  .icon-container { width: 38px; height: 38px; }
+  .icon-container svg { width: 18px; height: 18px; }
+  .info-text { font-size: 13px; }
+}

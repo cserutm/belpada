@@ -1,0 +1,100 @@
+/* =============================================
+   BASE.CSS — Shared styles for all pages
+   ============================================= */
+
+/* Import Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS Variables */
+:root {
+  --bg-color: #12111F;
+  --primary-red: #A30A14;
+  --hover-red: #C50F1B;
+  --text-white: #FFFFFF;
+  --text-gray: #B0ADD0;
+  --border-purple: #2D2945;
+  --font-family: 'Poppins', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset Gaya Bawaan Browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body */
+body {
+  font-family: var(--font-family);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+  touch-action: manipulation; /* Mencegah double-tap zoom secara global */
+}
+
+/* Mencegah double-tap zoom pada elemen interaktif secara global */
+a, button, input, textarea, select, .back-button, .btn, .pill, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* ---- Bersama: Tombol Kembali ---- */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-red);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 10px rgba(163, 10, 20, 0.2);
+}
+
+.back-button:hover {
+  background-color: var(--hover-red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(197, 15, 27, 0.4);
+}
+
+/* ---- Shared Keyframe Animations ---- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandWidth {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes floatIllustration {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gearSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

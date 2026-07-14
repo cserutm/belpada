@@ -1,0 +1,526 @@
+/* Assets/css/laboratorium.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #faf9f6; /* Warna beige sangat terang */
+    color: #333;
+    touch-action: manipulation; /* Mencegah double-tap zoom di seluruh halaman */
+}
+
+/* Navbar */
+.lab-navbar {
+    background-color: #171725;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+.lab-navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 4px;
+    background-color: #A30A14; /* var(--primary-red) */
+}
+
+.lab-navbar .back-button {
+    box-shadow: none;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo img {
+    height: 42px;
+    width: auto;
+}
+
+.header-logo-text {
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Container Utama */
+.lab-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 25px 5%; /* 5% untuk menyelaraskan dengan ujung navbar */
+}
+
+/* Header Lab */
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.lab-title-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #000;
+}
+
+.lab-subtitle {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+/* Tombol Menu Burger (Kanan Atas) */
+.btn-menu-burger {
+    background-color: #eebbaf; /* Warna peach/krem */
+    border: none;
+    border-radius: 8px;
+    width: 50px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #222;
+    font-size: 24px;
+    transition: background-color 0.2s;
+}
+
+.btn-menu-burger:hover {
+    background-color: #d8a89c;
+}
+
+/* Grid Area (Editor & Output) */
+.lab-workspace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    height: 500px; /* Tinggi standar */
+}
+
+/* Kolom */
+.lab-col {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-width: 0; /* Mencegah kolom melar melebihi grid saat konten sangat panjang */
+}
+
+/* Header Kolom */
+.col-header {
+    background-color: #d5d7d9; /* Abu-abu terang */
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* Tombol Reset (Biru Keabuan) */
+.btn-reset {
+    background-color: #4b6584;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 2px;
+}
+.btn-reset:hover {
+    background-color: #3b5068;
+}
+
+/* Tombol Jalankan (Merah) */
+.btn-run {
+    background-color: #a80000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 2px;
+}
+.btn-run:hover {
+    background-color: #8a0000;
+}
+
+/* Area Body (Editor / Output) */
+.col-body {
+    flex: 1;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.editor-body {
+    background-color: #282a36; /* Warna tema dracula */
+}
+
+.output-body {
+    background-color: #ffffff;
+    border: 1px solid #eee; /* Sedikit border tipis */
+    border-top: none;
+}
+
+.output-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #ffffff;
+}
+
+/* Kustomisasi CodeMirror agar tampil penuh */
+.CodeMirror {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    height: 100% !important;
+    width: 100% !important;
+    touch-action: manipulation; /* Mencegah double-tap zoom di editor */
+}
+
+/* Memaksa teks yang panjang tanpa spasi (seperti base64) untuk dibungkus */
+.CodeMirror-wrap pre {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .lab-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+    .lab-title-area {
+        width: auto;
+        text-align: left;
+    }
+    .lab-title {
+        font-size: 22px;
+    }
+    .lab-subtitle {
+        font-size: 14px;
+    }
+    .btn-menu-burger {
+        align-self: auto;
+        flex-shrink: 0;
+    }
+    .lab-workspace {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 20px;
+    }
+    .lab-col {
+        height: 480px; /* Ditinggikan agar area editor dan output lebih luas di ponsel */
+    }
+    .CodeMirror {
+        font-size: 16px !important; /* Mencegah auto-zoom di iOS/Safari saat fokus mengetik */
+    }
+    .lab-navbar .header-logo-text {
+        font-size: 18px;
+    }
+}
+@media (max-width: 480px) {
+    .lab-col {
+        height: 420px; /* Ditinggikan agar tidak terlalu sempit */
+    }
+    .col-header {
+        padding: 8px 10px; /* Mengurangi padding header agar muat satu baris */
+    }
+    .col-title {
+        font-size: 15px; /* Memperkecil judul kolom */
+    }
+    .btn-reset, .btn-run {
+        padding: 6px 10px; /* Memperkecil tombol agar tidak menumpuk */
+        font-size: 12px;
+        gap: 4px;
+    }
+}
+
+/* Sidebar Menu */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lab-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #171725;
+    z-index: 50;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.lab-sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    height: 70px;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: flex-end; /* Align right to match the main burger location */
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    padding: 16px 24px;
+    color: #e2e8f0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background-color 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: #2a2a3c;
+}
+
+.sidebar-item.active {
+    background-color: #3b3b54;
+    color: #ffffff;
+}
+
+/* =============================================
+   CONSOLE PANEL (VS Code-like Output & Errors)
+   ============================================= */
+.console-panel {
+    display: none; /* Tersembunyi secara default */
+    flex-direction: column;
+    height: 180px;
+    background-color: #1e1e24; /* Senada dengan tema gelap editor */
+    border-top: 2px solid #2d2d3a;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    color: #d4d4d4;
+    z-index: 5;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Mencegah penciutan */
+}
+
+.console-panel.active {
+    display: flex;
+}
+
+.console-header {
+    background-color: #18181c;
+    padding: 6px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d2d3a;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.console-header-title {
+    font-weight: bold;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.console-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.console-actions button {
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 2px 6px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.console-actions button:hover {
+    color: #fff;
+}
+
+.console-logs {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.console-placeholder {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.console-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.console-line-log {
+    border-left: 3px solid #6b7280;
+}
+
+.console-line-info {
+    border-left: 3px solid #0ea5e9;
+    color: #38bdf8;
+}
+
+.console-line-warn {
+    border-left: 3px solid #eab308;
+    color: #fef08a;
+    background-color: rgba(234, 179, 8, 0.05);
+}
+
+.console-line-error {
+    border-left: 3px solid #ef4444;
+    color: #fecaca;
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.console-line-icon {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.console-line-message {
+    flex: 1;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.console-line-location {
+    color: #a80000;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+    text-decoration: underline;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.console-line-location:hover {
+    color: #ef4444;
+}
+
+/* Tombol toggle konsol di header */
+.btn-console-toggle {
+    background-color: #4b6584;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 2px;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.btn-console-toggle:hover {
+    background-color: #3b5068;
+}
+
+.btn-console-toggle.active {
+    background-color: #1e1e24;
+    border-bottom: 2px solid #a80000;
+}
+
+.error-badge {
+    background-color: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 9999px;
+    min-width: 16px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Custom highlight untuk baris CodeMirror yang error */
+.cm-error-line {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    border-left: 3px solid #ef4444 !important;
+}
+
+
+

@@ -1,0 +1,404 @@
+/* =============================================
+   LATIHAN.CSS — Latihan menyusun kode
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --latihan-bg: #f7f4eb;
+  --panel-bg: #d9d7d3;
+  --pill-bg: #0f1220;
+  --pill-bg-2: #161a2e;
+  --muted: #5b5b5b;
+}
+
+body.latihan-page {
+  background: var(--latihan-bg);
+  color: #111;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Bagian Atas / Header */
+.latihan-header {
+  background-color: #171725;
+  height: 70px;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.latihan-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 4px;
+  background: var(--primary-red);
+}
+
+.latihan-header .back-button {
+  box-shadow: none;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  height: 42px;
+  width: auto;
+}
+
+.brand-text {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Kontainer Utama */
+.latihan-container {
+  width: 100%;
+  padding: 28px 5% 56px;
+}
+
+.latihan-intro {
+  margin: 10px 0 18px;
+}
+
+.latihan-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: #111111;
+  text-align: left;
+}
+
+.latihan-subtitle {
+  font-size: clamp(14px, 1.4vw, 16px);
+  color: #444444;
+  margin: 0 0 40px 0;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Tata Letak Kisi (Grid) */
+.latihan-grid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border-radius: 28px;
+  padding: 20px 22px 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.panel-head {
+  margin-bottom: 10px;
+}
+
+.panel-head-center {
+  text-align: center;
+}
+
+.soal-badge {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.soal-desc {
+  margin: 8px 0 0 0;
+  color: #000;
+  line-height: 1.5;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.soal-desc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 700;
+  color: #111;
+}
+
+.panel-hint {
+  margin: 10px 0 12px;
+  color: var(--primary-red);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* Pills */
+.pool {
+  display: grid;
+  gap: 12px;
+}
+
+.pill {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--pill-bg), var(--pill-bg-2));
+  color: #fff;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
+.pill:active {
+  transform: translateY(0);
+}
+
+.pill-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Answer area */
+.jawaban-title {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.jawaban-subtitle {
+  font-weight: 700;
+  color: #222;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.answer-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.answer-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: #111;
+  text-align: right;
+}
+
+.pill-answer {
+  justify-content: flex-start;
+}
+
+/* Actions */
+.panel-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-reset {
+  background: #6c7a89;
+  color: #fff;
+}
+
+.btn-check {
+  background: var(--primary-red);
+  color: #fff;
+}
+
+.result {
+  margin-top: 10px;
+  min-height: 18px;
+  font-weight: 800;
+  color: #222;
+}
+
+.result-ok {
+  color: #0f7a2a;
+}
+
+.result-bad {
+  color: #9b1111;
+}
+
+.result-warn {
+  color: #8a5b00;
+}
+
+@media (max-width: 980px) {
+  .latihan-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .latihan-container {
+    padding: 15px 3% 40px;
+  }
+  .latihan-intro {
+    margin: 5px 0 10px;
+  }
+  .latihan-title {
+    margin-bottom: 5px;
+  }
+  .latihan-subtitle {
+    margin-bottom: 20px;
+  }
+  .panel {
+    border-radius: 16px;
+    padding: 16px 14px 18px;
+  }
+  .soal-badge {
+    font-size: 15px;
+  }
+  .soal-desc {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .panel-hint {
+    margin: 8px 0 10px;
+    font-size: 13px;
+  }
+  .pill {
+    padding: 11px 14px;
+  }
+  .pill-text {
+    font-size: 14px;
+  }
+  .answer-row {
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+  }
+  .answer-num {
+    font-size: 16px;
+  }
+  .panel-actions {
+    gap: 8px;
+  }
+  .btn {
+    padding: 10px 10px;
+    font-size: 14px;
+    gap: 6px;
+  }
+  .modal-content {
+    padding: 20px 20px;
+    border-radius: 16px;
+  }
+  .modal-title {
+    font-size: 22px;
+  }
+  .modal-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+/* ---- MODAL SELESAI ---- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transform: scale(0.9);
+  animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  color: #111;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+
+.modal-text {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+@keyframes popUp {
+  to {
+    transform: scale(1);
+  }
+}
